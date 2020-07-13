@@ -29,13 +29,16 @@ class Artist
     @songs
   end
   
-  def genres=(genre) 
-    artist.genre = genre
-    @genres << genre
-  end
-  
   def genres 
-    @genres
+    @genre_array = []
+    @songs.each do |song|
+      if @genre_array.include?(song.genre)
+        nil
+      else 
+        @genre_array << song.genre
+      end
+    end
+    @genre_array
   end
   
   def songs

@@ -16,7 +16,6 @@ class Song
   
   def self.create(song)
     song = Song.new(name) 
-    song.save
     song
   end
   
@@ -27,6 +26,29 @@ class Song
   
   def artist 
     @artist 
+  end
+  
+  def genre=(genre) 
+    @genre = genre
+    genre.songs << self unless genre.songs.include?(self)
+  end
+  
+  def genre 
+    @genre 
+  end
+  
+  def self.find_by_name(name)
+    @@all.detect do |song| 
+      song.name == name
+    end
+  end
+  
+  def self.find_or_create_by_name(name)
+    if self.find_by_name(name)
+      self.find_by_name(name)
+    else
+      self.create(name)
+    end
   end
   
   def self.all 

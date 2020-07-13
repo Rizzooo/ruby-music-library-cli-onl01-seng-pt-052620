@@ -20,7 +20,15 @@ class Genre
   end
 
   def artists
-    @artists
+    @artist_array = []
+    @songs.each do |song|
+      if @artist_array.include?(song.artist)
+        nil
+      else 
+        @artist_array << song.artist
+      end
+    end
+    @artist_array
   end
   
   def add_song(song, genre = unknown)
