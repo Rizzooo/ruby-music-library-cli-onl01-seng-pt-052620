@@ -85,6 +85,7 @@ class MusicLibraryController
     
     if input > 0 && inputs <= Song.all.length
       
-    all_songs = 
+    all_songs = Song.all.sort { |x, y| x.name <=> y.name }
+    
   end
 end
