@@ -52,7 +52,7 @@ class MusicLibraryController
   end
   
   def list_genres
-    Genres.all.sort { |x, y| x.name <=> y.name }.each_with_index do |genre, index|
+    Genre.all.sort { |x, y| x.name <=> y.name }.each_with_index do |genre, index|
       puts "#{index + 1}. #{genre.name}"
     end
   end
