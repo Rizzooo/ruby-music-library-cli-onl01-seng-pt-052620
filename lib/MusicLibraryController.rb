@@ -84,5 +84,7 @@ class MusicLibraryController
     input = gets.chomp
     
     if input > 0 && inputs <= Song.all.length
+      
+    all_songs = 
   end
 end
