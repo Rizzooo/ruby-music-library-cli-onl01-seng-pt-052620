@@ -9,20 +9,16 @@ class Genre
     @songs = []
   end
   
-   def save
+  def save
     @@all << self
   end
   
   def self.create(genre)
-    genre = Genre.new(name)
+    genre = Genre.new(genre)
     genre.save
     genre
   end
   
-  def artists=(artist)
-    @artist = artist 
-  end
-
   def artists
     @artist_array = []
     @songs.each do |song|
