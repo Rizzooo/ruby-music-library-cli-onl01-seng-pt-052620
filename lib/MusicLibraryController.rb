@@ -83,6 +83,6 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     input = gets.chomp
     
-    if  input > 0 && inputs <= Song.all.length
+    if input > 0 && inputs <= Song.all.length
   end
 end
